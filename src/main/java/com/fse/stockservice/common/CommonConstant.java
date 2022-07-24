@@ -16,6 +16,7 @@ public final class CommonConstant {
 
     public final static SimpleDateFormat formatterDB = new SimpleDateFormat("dd-MMM-yyyy", Locale.ENGLISH);
     public final static SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy hh:mm:ss", Locale.ENGLISH);
+    public final static String DELETE_STOCK_QUEUE = "fse_delete_queue_info";
     private static final Map<String, String> result = new HashMap<>();
 
     public static Map<String, String> getSuccessMapResponse() {

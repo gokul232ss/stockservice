@@ -11,4 +11,6 @@ import java.util.List;
 public interface StockRepository extends JpaRepository<Stock, Integer> {
 
     List<Stock> findByCompanyCodeAndStockDateTimeBetween(int companyCode, Date fromDate, Date toDate);
+
+    Long deleteByCompanyCode(int companyCode);
 }

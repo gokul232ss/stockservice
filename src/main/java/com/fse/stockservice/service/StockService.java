@@ -9,4 +9,6 @@ public interface StockService {
     Map<String, String> add(int companyCode, StockRequest request);
 
     List<StockRequest> get(int companyCode, String startDate, String endDate);
+
+    void deleteAllCompanyStock(Map<String, Object> mapData);
 }
