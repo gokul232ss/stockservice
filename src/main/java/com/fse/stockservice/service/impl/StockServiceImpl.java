@@ -51,6 +51,6 @@ public class StockServiceImpl implements StockService {
 
     @Override
     public void deleteAllCompanyStock(Map<String, Object> mapData) {
-        repository.deleteByCompanyCode(Integer.parseInt(mapData.get("CompanyCode").toString()));
+        repository.deleteByCompanyCode(Integer.parseInt(mapData.get("companyCode").toString()));
     }
 }
