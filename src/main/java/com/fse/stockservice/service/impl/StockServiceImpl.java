@@ -9,6 +9,7 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -50,6 +51,7 @@ public class StockServiceImpl implements StockService {
     }
 
     @Override
+    @Transactional
     public void deleteAllCompanyStock(Map<String, Object> mapData) {
         repository.deleteByCompanyCode(Integer.parseInt(mapData.get("companyCode").toString()));
     }
