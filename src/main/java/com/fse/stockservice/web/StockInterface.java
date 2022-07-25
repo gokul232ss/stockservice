@@ -1,5 +1,6 @@
 package com.fse.stockservice.web;
 
+import com.fse.stockservice.exception.CommonInternalException;
 import com.fse.stockservice.model.request.StockRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,11 +17,11 @@ public interface StockInterface {
     @PostMapping("/add/{companyCode}")
     ResponseEntity<Map<String, String>> add(
             @PathVariable("companyCode") int companyCode,
-            @RequestBody StockRequest request);
+            @RequestBody StockRequest request) throws CommonInternalException;
 
     @GetMapping("/get/{companyCode}/{startDate}/{endDate}")
     ResponseEntity<List<StockRequest>> get(
             @PathVariable("companyCode") int companyCode,
             @PathVariable("startDate") String startDate,
-            @PathVariable("endDate") String endDate);
+            @PathVariable("endDate") String endDate) throws CommonInternalException;
 }

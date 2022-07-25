@@ -1,5 +1,6 @@
 package com.fse.stockservice.web.impl;
 
+import com.fse.stockservice.exception.CommonInternalException;
 import com.fse.stockservice.model.request.StockRequest;
 import com.fse.stockservice.service.StockService;
 import com.fse.stockservice.web.StockInterface;
@@ -23,12 +24,14 @@ public class StockController implements StockInterface {
     }
 
     @Override
-    public ResponseEntity<Map<String, String>> add(int companyCode, StockRequest request) {
+    public ResponseEntity<Map<String, String>> add(int companyCode, StockRequest request)
+            throws CommonInternalException {
         return new ResponseEntity<>(service.add(companyCode, request), HttpStatus.CREATED);
     }
 
     @Override
-    public ResponseEntity<List<StockRequest>> get(int companyCode, String startDate, String endDate) {
+    public ResponseEntity<List<StockRequest>> get(int companyCode, String startDate, String endDate)
+            throws CommonInternalException {
         return new ResponseEntity<>(service.get(companyCode, startDate, endDate), HttpStatus.OK);
     }
 
